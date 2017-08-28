@@ -1,4 +1,17 @@
 <resources>
     <string name="app_name">GitLagJavaDevs</string>
     <string name="action_settings">Settings</string>
+    <string name="refresh_text">Try Again</string>
+    <string name="detail_title">Profile Detail</string>
+    <string name="app_err">"No application can handle this request."
+                            + " Please install a web-browser"</string>
+    <string name="home_url">https://github.com/</string>
+    <string name="userShare">Check out this awesome developer @</string>
+    <string name="error_message">Could not fetch data at this time, please reload</string>
+    <string name="internet_failure">Internet Connection Problem... make sure you are connected and have access to internet</string>
+    <string name="SEARCH_STRING">location:lagos language:java</string>
+    <string name="username">UserName</string>
+    <string name="share_profile">share profile</string>
+
 </resources>
+
