@@ -30,9 +30,9 @@
             />
     </LinearLayout>
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycleView_id"
+        android:id="@+id/rvView"
         android:paddingLeft="2dp"
-        android:paddingTop="70dp"
+        android:paddingTop="60dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
     </android.support.v7.widget.RecyclerView>
@@ -49,13 +49,13 @@
         android:visibility="invisible" />
 
     <Button
-        android:id="@+id/refresh"
+        android:id="@+id/btnRefresh"
         android:textColor="@color/white"
         android:onClick="Refresh"
         android:layout_gravity="center"
+        style="@style/Widget.AppCompat.ActionBar"
         android:text="@string/refresh_text"
         android:layout_marginTop="50dp"
-        android:visibility="invisible"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
