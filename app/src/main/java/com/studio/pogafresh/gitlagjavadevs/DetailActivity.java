@@ -2,6 +2,7 @@ package com.studio.pogafresh.gitlagjavadevs;
 
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
@@ -53,8 +54,12 @@ public class DetailActivity extends AppCompatActivity {
             public void onClick(View v) {
                 try {
                     //open a share intent and put github url of the user in it
-                    Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.home_url) + userName));
-                    startActivity(myIntent);
+                    Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+                    sharingIntent.setType("text/plain");
+                    String shareBody = getString(R.string.userShare) + userName +  ", " + getString(R.string.home_url) + userName ;
+                    sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Subject Here");
+                    sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
+                    startActivity(Intent.createChooser(sharingIntent, "Share via"));
                 } catch (ActivityNotFoundException e) {
                     //show error if there is an error as a toast
                     Toast.makeText(DetailActivity.this, getString(R.string.app_err), Toast.LENGTH_LONG).show();
@@ -77,6 +82,7 @@ public class DetailActivity extends AppCompatActivity {
 
             tvName.setText(userName);
             tvUrl.setText(getString(R.string.home_url) + userName);
+            ivImageView.setImageDrawable(Drawable.createFromPath(userImage));
 
         }
 
